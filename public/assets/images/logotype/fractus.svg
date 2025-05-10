@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Шар_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 138.5 143.3">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #0d3557;
+      }
+
+      .st1 {
+        fill: #bc585e;
+      }
+
+      .st2 {
+        fill: #eb696a;
+      }
+
+      .st3 {
+        fill: #174e76;
+      }
+
+      .st4 {
+        fill: #2b6487;
+      }
+
+      .st5 {
+        fill: #de6168;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1">
+    <polygon class="st0" points="49.9 107.3 79.2 136.9 79.2 96.6 49.9 107.3"/>
+    <polygon class="st0" points="44.6 102 49.9 107.3 44.6 14.8 44.6 102"/>
+    <polygon class="st4" points="48.1 75.5 49.9 107.3 79.2 96.6 79.2 84.2 60.7 84.2 48.1 75.5"/>
+    <polygon class="st4" points="66.1 36.3 44.6 14.8 46.6 49.4 66.1 36.3"/>
+    <polygon class="st1" points="79.2 96.6 113.5 84.1 79.2 84.1 79.2 96.6"/>
+    <polygon class="st4" points="89.8 14.8 128 49.4 128 14.8 89.8 14.8"/>
+    <polygon class="st0" points="89.8 14.8 64.7 34.9 44.6 14.8 89.8 14.8"/>
+    <polygon class="st3" points="128 49.4 46.6 49.4 89.8 14.8 128 49.4"/>
+    <polygon class="st2" points="113.5 84.1 79.2 49.4 67.1 72 67.1 72 60.7 84.2 79.3 84.2 79.2 84.1 113.5 84.1"/>
+    <polygon class="st5" points="46.6 49.4 60.7 84.2 79.1 49.4 46.6 49.4"/>
+    <polygon class="st2" points="46.6 49.4 10 49.4 60.7 84.2 46.6 49.4"/>
+  </g>
+</svg>
