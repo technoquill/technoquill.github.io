@@ -1,11 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="favicon.ico" rel="icon" type="image/x-icon">
-    <title>Resume</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link href="public/assets/icons/favicon/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="public/assets/css/style.css" rel="stylesheet">
+    <title></title>
+    <!-- Created by M.Kulyk as part of training and prepare to the feature job interview -->
 </head>
 <body>
+
+<div id="wrapper">
+
+
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="public/assets/js/template.js"></script>
+<script type="importmap">
+    {
+  "imports": {
+    "vue": "https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.js",
+    "vue-i18n" : "https://unpkg.com/vue-i18n@11/dist/vue-i18n.esm-browser.js"
+  },
+  "scopes": {}
+}
+</script>
+
+<script type="module">
+    import {createApp, ref, reactive, onMounted, nextTick} from 'vue';
+    import {createI18n} from 'vue-i18n';
+
+    const i18n = createI18n({
+        locale: 'en',
+        fallbackLng: 'en',
+        messages: {
+            en: {
+                message: {
+                    "menu": "Menu",
+                    "opportunities_as": "Looking for new opportunities and a company that I can grow with a",
+                    "about_me": "About Me",
+                    "skills": "Skills",
+                    "experience": "Experience",
+                    "responsibilities": "Responsibilities",
+                    "achievements": "Achievements",
+                }
+            }
+        }
+    });
+
+
+    createApp({
+        setup() {
+            const data = ref({});
+            const url = './data/json/en/data.json';
+
+            onMounted(async () => {
+                const response = await fetch(url);
+                data.value = await response.json();
+                await nextTick();
+                // remove placeholder
+                Array.from(document.getElementsByClassName("placeholder")).forEach(function (item) {
+                    item.classList.remove("placeholder");
+                });
+                // Set meta.title
+                document.title = data.value.meta_title;
+            });
+
+            return {data, formatDate, wrapText, storage, strongLine}
+
+        }
+    })
+        .use(i18n)
+        .mount('#wrapper');
+
+</script>
+
 
 </body>
 </html>
