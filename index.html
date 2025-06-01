@@ -14,77 +14,303 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link href="public/assets/css/style.css" rel="stylesheet">
     <title></title>
-    <!-- Created by M.Kulyk as part of training and prepare to the feature job interview -->
+    <!-- Created by M. Kulyk as part of training and prepare to the feature job interview -->
 </head>
 <body>
 
 <div id="wrapper">
 
+    <div class="container-fluid">
+        <div class="row overhead">
+            <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <aside class="col-auto" id="sidebar-wrapper" role="complementary" aria-label="sidebar">
+                <div id="sidebar">
+                    <div id="sidebar-content">
+                        <div class="placeholder-glow">
+                            <div id="vcard">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div id="profile-picture" class="placeholder">
+                                            <img class="img-fluid rounded-circle"
+                                                 src="public/assets/images/placeholder.png"
+                                                 alt="Profile picture"/>
+                                        </div>
+                                        <address class="placeholder w-100">
+                                            <i class="fa-solid fa-location-dot"></i> <span
+                                                v-text="data.location"></span>
+                                        </address>
+
+                                        <div class="placeholder w-100">
+                                            <div class="h5" v-text="$t('message.networks')"></div>
+
+                                            <ul class="links-list">
+                                                <li v-for="item in data.links">
+                                                    <a v-bind:href="item.src" v-bind:title="item.title" target="_blank">
+                                                        <i v-bind:class="item.icon"></i><span
+                                                            v-text="item.title"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
 
 
+                                        <div class="placeholder w-100">
+                                            <div class="h5" v-text="$t('message.languages')"></div>
+                                            <ul>
+                                                <li v-for="(item, key) in data.languages">
+                                                    <strong v-html="(key + ' : ')"></strong><span v-html="item"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                        <div class="d-grid gap-2">
+                                            <div class="placeholder w-100">
+                                                <a class="btn btn-outline-secondary placeholder w-100" target="_blank"
+                                                   href="public/vcard/v-card.vcf">Save
+                                                    V-Card</a>
+                                            </div>
+                                            <div class="placeholder w-100">
+                                                <a class="btn btn-outline-secondary placeholder w-100" href="#"
+                                                   data-bs-toggle="modal"
+                                                   data-bs-target="#qrModal">Open Qr contacts</a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="card-body">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+
+            <main class="col">
+
+                <header> <!-- class="sticky-top" -->
+
+                    <div class="d-flex flex-row justify-content-end align-items-center">
+                        <div>
+                            <button class="theme-toggler btn btn-default" type="button" id="theme-toggle"
+                                    data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                    data-bs-title="Tooltip on bottom">
+                                <i class="fa-solid fa-circle-half-stroke"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <nav class="navbar" id="navbar">
+                                <div class="container-fluid">
+                                    <a class="navbar-brand" href="#">&nbsp;</a>
+
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                                         aria-labelledby="offcanvasNavbarLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">{{ $t('message.menu')
+                                                }}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                    aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" aria-current="page" href="#about-me">About
+                                                        Me</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#skills">Skills</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#experience">Experience</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+
+                    </div>
+
+                </header>
+
+
+                <article id="main-content">
+
+                    <h1 class="placeholder w-100">
+                        <span v-html="data.name"></span>
+                    </h1>
+
+                    <!-- start .about-me section -->
+                    <section class="about-me placeholder-glow" id="about-me">
+                        <h2 class="placeholder w-90"><span class="aim" v-text="data.title"></span></h2>
+                        <p class="placeholder w-100" v-html="data.summary"></p>
+                        <p class="placeholder w-100" v-html="data.purpose"></p>
+                        <div class="placeholder w-100">
+                            <ul>
+                                <li v-for="(item, key) in data.skills">
+                                    <strong v-html="(key + ' : ')"></strong><span v-html="item"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- end .about-me section -->
+
+                    <!-- start  .experiences section -->
+                    <section class="experiences placeholder-glow" id="experience">
+                        <h2 class="placeholder w-50" v-text="$t('message.experience')"></h2>
+
+                        <div class="item placeholder w-100" v-for="(item) in data.experience" v-if="data.experience">
+                            <h3 class="h4" v-text=" item.position"></h3>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <img v-bind:style="{ backgroundImage: 'url(' + storage(item.logo, 'logotype') + ')' }"
+                                         v-bind:src="storage('placeholder')" v-bind:alt="item.company"
+                                         class="company-logo img-fluid">
+                                </div>
+                                <div class="col"><span v-html="formatDate(item.start_date)"></span> - <span
+                                        v-html="formatDate(item.end_date)"></span><br>
+                                    <strong v-text="item.company"></strong> — <span v-text="item.location"></span>
+                                </div>
+                            </div>
+                            <div v-if="item.responsibilities">
+                                <p v-html="wrapText(item.description, item.keywords)"></p>
+                                <ul>
+                                    <li v-for="(item, key) in item.responsibilities" :key="key"
+                                        v-html="strongLine(key, item)"></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </section>
+                    <!-- end  .experiences section -->
+
+                    <section class="education placeholder-glow" id="education">
+                        <h2 class="placeholder w-50" v-text="$t('message.education')"></h2>
+                        <div class="item placeholder w-100" v-for="(item) in data.education" v-if="data.education">
+                            <h3 class="h4" v-text=" item.institution"></h3>
+
+                            <div class="row">
+                                <div class="col-auto">
+                                    <img v-bind:style="{ backgroundImage: 'url(' + storage(item.logo, 'logotype') + ')' }"
+                                         v-bind:src="storage('placeholder')" v-bind:alt="item.institution"
+                                         class="company-logo img-fluid">
+                                </div>
+                                <div class="col"><span v-html="formatDate(item.start_date)"></span> - <span
+                                        v-html="formatDate(item.end_date)"></span><br>
+                                    <strong v-text="item.area"></strong> — <span v-text="item.study_type"></span>
+                                </div>
+                                <div>
+                                    <p v-html="item.description"></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+                </article>
+
+            </main>
+        </div>
+
+    </div>
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script src="public/assets/js/template.js"></script>
-<script type="importmap">
-    {
-  "imports": {
-    "vue": "https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.js",
-    "vue-i18n" : "https://unpkg.com/vue-i18n@11/dist/vue-i18n.esm-browser.js"
-  },
-  "scopes": {}
-}
-</script>
 
-<script type="module">
-    import {createApp, ref, reactive, onMounted, nextTick} from 'vue';
-    import {createI18n} from 'vue-i18n';
+<!-- Modal -->
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title fs-5" id="exampleModalLabel">Qr Contact</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="qr-v-card">
+                    <img class="img-fluid" src="public/assets/images/placeholder.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    const i18n = createI18n({
-        locale: 'en',
-        fallbackLng: 'en',
-        messages: {
-            en: {
-                message: {
-                    "menu": "Menu",
-                    "opportunities_as": "Looking for new opportunities and a company that I can grow with a",
-                    "about_me": "About Me",
-                    "skills": "Skills",
-                    "experience": "Experience",
-                    "responsibilities": "Responsibilities",
-                    "achievements": "Achievements",
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="public/assets/js/template.js"></script>
+    <script type="importmap">
+        {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.js",
+        "vue-i18n" : "https://unpkg.com/vue-i18n@11/dist/vue-i18n.esm-browser.js"
+      },
+      "scopes": {}
+    }
+    </script>
+
+    <script type="module">
+        import {createApp, ref, reactive, onMounted, nextTick} from 'vue';
+        import {createI18n} from 'vue-i18n';
+
+        const i18n = createI18n({
+            locale: 'en',
+            fallbackLng: 'en',
+            messages: {
+                en: {
+                    message: {
+                        "menu": "Menu",
+                        "about_me": "About Me",
+                        "skills": "Skills",
+                        "experience": "Experience",
+                        "networks": "Networks",
+                        "languages": "Languages",
+                        "education": "Education",
+                    }
+                },
+                de: {
+                    message: {}
                 }
             }
-        }
-    });
+        });
 
 
-    createApp({
-        setup() {
-            const data = ref({});
-            const url = './data/json/en/data.json';
+        createApp({
+            setup() {
+                const data = ref({});
+                const url = './data/json/en/data.json';
 
-            onMounted(async () => {
-                const response = await fetch(url);
-                data.value = await response.json();
-                await nextTick();
-                // remove placeholder
-                Array.from(document.getElementsByClassName("placeholder")).forEach(function (item) {
-                    item.classList.remove("placeholder");
+                onMounted(async () => {
+                    const response = await fetch(url);
+                    data.value = await response.json();
+                    await nextTick();
+                    // remove placeholder
+                    Array.from(document.getElementsByClassName("placeholder")).forEach(function (item) {
+                        item.classList.remove("placeholder");
+                    });
+                    // Set meta.title
+                    document.title = data.value.meta_title;
                 });
-                // Set meta.title
-                document.title = data.value.meta_title;
-            });
 
-            return {data, formatDate, wrapText, storage, strongLine}
+                return {data, formatDate, wrapText, storage, strongLine}
 
-        }
-    })
-        .use(i18n)
-        .mount('#wrapper');
+            }
+        })
+            .use(i18n)
+            .mount('#wrapper');
 
-</script>
+    </script>
 
 
 </body>

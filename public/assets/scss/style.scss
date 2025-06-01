@@ -11,6 +11,7 @@
     font-size: 1vw;
   }
 }
+
 @media (max-width: 768px) {
   html {
     //font-size-adjust: 0.5;
@@ -20,54 +21,31 @@
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
 }
 
 .overhead {
-  min-height: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  height: 1rem;
+
+  [data-bs-theme=dark] & {
+    background: #212529;
+  }
+  [data-bs-theme=light] & {
+    background: #FFFFFF;
+  }
 }
 
 
 #wrapper {
-
   //max-width: 1680px;
   //margin: 0 auto;
 }
 
-#sidebar {
-  min-width: 20rem;
+@import "partials/sidebar";
 
-  &-content {
-    position: fixed;
-    min-width: 320px;
-    height: 100vh;
-    //background-color: #E8E8E9;
-
-  }
-}
-
-#profile-picture {
-  width: 100%;
-  //margin-top: 2rem;
-  img {
-    max-width: 8rem;
-  }
-
-  &:not(.placeholder) {
-    text-align: center;
-
-    img {
-      border-radius: 50%;
-      background: url("../images/profile/profile_picture.jpeg") no-repeat center center;
-      background-size: contain;
-    }
-  }
-}
-
-#vcard {
-  max-width: 20rem;
-}
 
 .company-logo {
   width: 5rem;
@@ -78,12 +56,14 @@ body {
   border-radius: 50%;
 }
 
-header.sticky-top {
-  border-style: solid;
-  border-width: var(--bs-border-width);
-  border-color: var(--bs-border-color-translucent);
-  border-radius: var(--bs-border-radius);
-  padding: 1rem 2rem;
+header { // .sticky-top
+  position: sticky;
+  top: 1rem;
+  //border-style: solid;
+  //border-width: var(--bs-border-width);
+  //border-color: var(--bs-border-color-translucent);
+  //border-radius: var(--bs-border-radius);
+  padding: .75rem 1rem;
 
   [data-bs-theme=light] & {
     background: #F8F8F8;
@@ -96,8 +76,14 @@ header.sticky-top {
 }
 
 #main-content {
-  margin-top: 1rem;
+  //margin-top: 1rem;
+  padding: 2rem .5rem;
 }
+
+.aim {
+  color: var(--bs-primary);
+}
+
 
 #qrModal {
   .modal-body {
@@ -109,6 +95,7 @@ header.sticky-top {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
   [data-bs-theme=light] & {
     background-image: url("../../../public/vcard/light/qrcode.svg");
   }
