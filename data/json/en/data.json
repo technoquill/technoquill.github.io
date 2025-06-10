@@ -3,7 +3,7 @@
   "meta_title": "PHP Developer | Skilled in Legacy Code, Modern Frameworks, CMS Integration | Full-Stack Skills: PHP, MySQL, JavaScript, HTML, SCSS/CSS",
   "title": "Full Stack & Backend PHP Developer",
   "location": "Mannheim, Baden-Württemberg, GE",
-  "summary": "I am an experienced developer with a strong focus on delivering results and maintaining high standards throughout the project lifecycle. I consistently follow defined priorities and tasks, and I strive to write clean, maintainable code while effectively understanding and working with code written by others.",
+  "summary": "Experienced Full-Stack PHP developer with a strong focus on delivering results and maintaining high standards throughout the project lifecycle. I consistently follow defined priorities and tasks, and strive to write clean, maintainable code while effectively understanding and working with code written by others.",
   "purpose": "I am looking for a long-term position in a stable, technically mature team where I can leverage my expertise, broaden my technology stack, solve complex technical challenges, and deliver long-term value to my future employer.",
   "links": [
     {
@@ -19,7 +19,7 @@
   ],
   "skills" : {
     "Backend": "PHP 7/8 (OOP, SOLID, MVC, Design Patterns), Yii2, Laravel, Symfony;",
-    "Frontend": "HTML5, SCSS/CSS, JavaScript (ES6+), jQuery, Bootstrap;",
+    "Frontend": "HTML5, SCSS/CSS, JavaScript (ES6+), Vue3, jQuery, Bootstrap;",
     "CMS": "PrestaShop, Joomla, WordPress;",
     "Databases": "MySQL (architecture, optimization);",
     "Server & Deployment": "Linux, (CentOS, Debian, Ubuntu), NGINX, bash, deployment processes;",
@@ -70,7 +70,7 @@
       "start_date": "2022-11",
       "end_date": "2023-12",
       "logo": "freelancer.svg",
-      "description": "Worked on various client web projects, covering full-cycle development using modern PHP Frameworks (Laravel 8, Symfony 5/6) and CMS platforms (PrestaShop 8, Joomla 4). Responsible for both backend and frontend tasks, from planning to delivery. ",
+      "description": "Delivered full-cycle development for client projects using PHP Frameworks (Laravel 8, Symfony 5/6) and CMS platforms (PrestaShop 8, Joomla 4). Handled backend and frontend tasks from planning to deployment.",
       "keywords": [
         "Laravel 8",
         "Symfony 5/6",
@@ -82,11 +82,11 @@
         "jQuery"
       ],
       "responsibilities": {
-        "Project Development": "Developed and maintained custom web applications using PHP, MySQL, JavaScript, and jQuery.",
-        "Custom Extensions": "Built modules, plugins, and custom components for E-Commerce platform PrestaShop and content management system Joomla ",
-        "Client Collaboration": "Collaborated directly with clients to understand requirements and provide technical solutions ",
-        "Deployment and Optimization": "Supported deployment, performance optimization, and debugging.",
-        "Google Ads": "Managed and optimized Google Ads campaigns for clients."
+        "Client Collaboration": "Collaborated with clients to gather requirements and provide technical solutions;",
+        "Project Development": "Developed and maintained custom web applications (PHP, MySQL, JavaScript, jQuery);",
+        "Custom Extensions": "Built modules, plugins, and components for PrestaShop and Joomla;",
+        "Optimization & performance": "Optimized websites performance (including SEO);",
+        "Google Ads": "Managed and optimized Google Ads campaigns for several clients."
       }
     },
     {
@@ -96,7 +96,7 @@
       "start_date": "2017-11",
       "end_date": "2022-10",
       "logo": "fractus.svg",
-      "description": "Led the technical development and implementation of a B2B e-commerce platform. Translated business requirements into scalable software solutions and managed a development team using agile practices.",
+      "description": "Led the technical development and business implementation of a B2B e-commerce platform focused on price comparison and wholesale/retail optimization. Built the platform from scratch together with a team, translating evolving business needs into technical solutions.",
       "keywords": [
         "Yii2",
         "Symfony Components",
@@ -108,11 +108,11 @@
         "CentOS"
       ],
       "responsibilities": {
-        "Tech Leadership": "Designed architecture and led development using Yii2, Symfony, and MySQL.",
-        "Team Management": "Recruited and mentored developers, fostering a collaborative environment.",
-        "Agile Management": "Managed sprints and milestones using Scrum and Kanban.",
-        "Server & Deployment": "Maintained Bitbucket repositories, performed code reviews, and administered CentOS servers.",
-        "Database Optimization": "Ensured high performance and scalability of MySQL structures."
+        "Team Management": "Recruited the initial development team and worked closely with developers throughout the project;",
+        "Tech Leadership": "Worked on system architecture: migrations, codebase and project structure (PHP/Yii2, Symfony components, MySQL);",
+        "Agile Management": "Oversaw key project phases and cross-functional collaboration; implemented agile methodologies (Scrum/Kanban);",
+        "Server & Deployment": "Wrote code, conducted code reviews via Bitbucket, and handled code deployment and CentOS server administration;",
+        "Database Optimization": "Optimized complex MySQL queries to improve system performance and efficiency."
       }
     },
     {
@@ -122,7 +122,7 @@
       "start_date": "2009-11",
       "end_date": "2017-10",
       "logo": "profisite.svg",
-      "description": "Founded and ran a web studio delivering end-to-end development for corporate websites and e-commerce projects, with a strong focus on CMS platforms.",
+      "description": "Founded and developed a local web studio that delivered full-cycle web development, from technical concept to maintenance and scaling of corporate websites. Specialized in CMS platforms (PrestaShop, Joomla, WordPress) and e-commerce, and completed 250+ projects across various industries.",
       "keywords": [
         "PrestaShop",
         "Joomla",
@@ -134,11 +134,12 @@
         "CSS"
       ],
       "responsibilities": {
-        "Full-Cycle Development": "Planned, developed, and maintained scalable web solutions.",
-        "Custom Coding": "Created responsive templates, modules, and plugins.",
-        "Client Engagement": "Built long-term client relationships and translated business needs.",
-        "Support & SEO": "Provided technical support and managed Google Ads campaigns.",
-        "Team Collaboration": "Worked with designers, SEO experts, and content teams."
+        "Full-Cycle Development": "Built and maintained backend and frontend systems;",
+        "Custom Coding": "Created responsive HTML templates and developed custom modules/plugins (PHP, JavaScript, MySQL);",
+        "Team Collaboration": "Collaborated with designers, content managers, and SEO specialists;",
+        "Client Engagement": "Translated business requirements into technical solutions and built long-term client relationships;",
+        "Technical support": "Provided technical support, troubleshooting, and optimization;",
+        "Support & SEO": "Managed and optimized Google Ads campaigns to enhance client visibility."
       }
     },
     {
@@ -148,7 +149,7 @@
       "start_date": "2008-10",
       "end_date": "2009-10",
       "logo": "freelancer.svg",
-      "description": "Provided freelance services for small businesses, focusing on frontend development and CMS integration.",
+      "description": "Worked as a freelance web developer focused on frontend development and CMS integration for small businesses and personal projects.",
       "keywords": [
         "HTML",
         "CSS",
@@ -157,9 +158,8 @@
         "Joomla"
       ],
       "responsibilities": {
-        "Template Development": "Created responsive HTML, CSS, and jQuery templates.",
-        "CMS Integration": "Integrated and customized WordPress and Joomla themes.",
-        "Compatibility": "Ensured cross-browser support and frontend performance."
+        "Template Development": "Developed templates (HTML, CSS, jQuery);",
+        "CMS Integration": "Integrated and customized templates, themes for WordPress and Joomla."
       }
     }
   ],
@@ -171,7 +171,7 @@
       "study_type": "Bachelor`s degree",
       "institution": "East European University of Economics and Management",
       "logo": "east-european-university.svg",
-      "description" : "Four-year bachelor's program in Digital Economics combines IT and business disciplines. The curriculum includes programming, web development, database design, and data analytics, alongside business process management, project planning, and digital transformation strategy."
+      "description" : "Bachelor's program in Digital Economics combines IT and business disciplines. The curriculum includes programming, web development, database design, and data analytics, alongside business process management, project planning, and digital transformation strategy."
     }
   ],
   "languages" : {

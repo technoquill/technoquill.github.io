@@ -37,17 +37,13 @@ body {
   }
 }
 
+#sidebar {
+  max-width: 22rem;
+}
 [class*=col-] #sidebar {
-  min-width: 20rem;
+  min-width: 22rem;
   position: sticky;
   top: 1rem;
-}
-@media (max-width: 992px) {
-  [class*=col-] #sidebar {
-    display: none;
-    position: fixed;
-    left: -20rem;
-  }
 }
 #sidebar-content {
   height: 100vh;
@@ -59,21 +55,6 @@ body {
 #sidebar .card-header {
   padding: 2rem 1rem;
   border: none;
-}
-#sidebar #profile-picture {
-  width: 100%;
-  padding-bottom: 1rem;
-}
-#sidebar #profile-picture img {
-  max-width: 9rem;
-}
-#sidebar #profile-picture:not(.placeholder) {
-  text-align: center;
-}
-#sidebar #profile-picture:not(.placeholder) img {
-  border-radius: 50%;
-  background: url("../images/profile/profile_picture.jpeg") no-repeat center center;
-  background-size: contain;
 }
 #sidebar h1 {
   padding: 1rem 0 0 0;
@@ -103,16 +84,56 @@ body {
   border-radius: 50%;
 }
 
+.profile-picture {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+.profile-picture img {
+  max-width: 9rem;
+}
+.profile-picture:not(.placeholder) {
+  text-align: center;
+}
+.profile-picture:not(.placeholder) img {
+  border-radius: 50%;
+  background: url("../images/profile/profile_picture.jpeg") no-repeat center center;
+  background-size: contain;
+}
+
 header {
   position: sticky;
   top: 1rem;
   padding: 0.75rem 1rem;
 }
+header .theme-toggler {
+  border-radius: 50%;
+}
+header .theme-toggler span {
+  font-size: 1.25rem;
+}
+header .theme-toggler span:before {
+  font-family: "Font Awesome 6 Free", serif;
+}
 [data-bs-theme=light] header {
   background: #F8F8F8;
 }
+[data-bs-theme=light] header .theme-toggler span:before {
+  content: "\f186";
+}
 [data-bs-theme=dark] header {
   background: #272B2F;
+}
+[data-bs-theme=dark] header .theme-toggler span:before {
+  content: "\f185";
+}
+
+.navbar-toggler {
+  display: none;
+}
+@media (max-width: 992px) {
+  .navbar-toggler {
+    display: block;
+  }
 }
 
 #main-content {

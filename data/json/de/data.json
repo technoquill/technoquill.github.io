@@ -1,0 +1,147 @@
+{
+  "name": "Mykhailo Kulyk",
+  "meta_title": "PHP-Entwickler | Erfahrung mit Legacy-Code, modernen Frameworks, CMS-Integration | Full-Stack: PHP, MySQL, JavaScript, HTML, SCSS/CSS",
+  "title": "Full-Stack- & Backend-PHP-Entwickler",
+  "location": "Mannheim, Baden-Württemberg, DE",
+  "summary": "Erfahrener Full-Stack-PHP-Entwickler mit starkem Fokus auf Ergebnisorientierung und hohen Qualitätsstandards während des gesamten Projektlebenszyklus. Ich folge konsequent festgelegten Prioritäten und Aufgaben und strebe danach, sauberen, wartbaren Code zu schreiben sowie bestehenden Code effizient zu verstehen und weiterzuentwickeln.",
+  "purpose": "Ich suche eine langfristige Position in einem stabilen, technisch ausgereiften Team, in dem ich meine Expertise einbringen, meinen Technologie-Stack erweitern, komplexe technische Herausforderungen lösen und langfristigen Mehrwert für meinen zukünftigen Arbeitgeber schaffen kann.",
+  "links": [
+    {
+      "title": "LinkedIn",
+      "src": "//linkedin.com/in/mykhailo-kulyk-php-developer/",
+      "icon": "fa-brands fa-linkedin"
+    },
+    {
+      "title": "GitHub",
+      "src": "//github.com/technoquill",
+      "icon": "fa-brands fa-square-git"
+    }
+  ],
+  "skills": {
+    "Backend": "PHP 7/8 (OOP, SOLID, MVC, Design Patterns), Yii2, Laravel, Symfony;",
+    "Frontend": "HTML5, SCSS/CSS, JavaScript (ES6+), jQuery, Bootstrap;",
+    "CMS": "PrestaShop, Joomla, WordPress;",
+    "Databases": "MySQL (Architektur, Optimierung);",
+    "Server & Deployment": "Linux (CentOS, Debian, Ubuntu), NGINX, bash, Deployment-Prozesse;",
+    "Tools & Platforms": "Git, Bitbucket, Jira;",
+    "Methodologies": "Agile (Scrum, Kanban);",
+    "Additional": "Grundlagen technisches SEO, Verwaltung von Google Ads."
+  },
+  "languages": {
+    "Ukrainisch (C2)": "Muttersprache",
+    "Englisch (B2/C1)": "Fortgeschritten",
+    "Deutsch (A2/B1)": "Grundkenntnisse (in Process)"
+  },
+  "experience": [
+    {
+      "position": "Full-Stack-PHP-Entwickler",
+      "company": "Selbstständig",
+      "location": "Tscherkassy, Ukraine",
+      "start_date": "2022-11",
+      "end_date": "2023-12",
+      "logo": "freelancer.svg",
+      "description": "Umfassende Full-Cycle-Entwicklung für Kundenprojekte mit PHP-Frameworks (Laravel 8, Symfony 5/6) und CMS-Plattformen (PrestaShop 8, Joomla 4). Verantwortlich für Backend- und Frontend-Aufgaben von der Planung bis zum Deployment.",
+      "keywords": [
+        "Laravel 8",
+        "Symfony 5/6",
+        "PrestaShop 8",
+        "Joomla 4",
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "jQuery"
+      ],
+      "responsibilities": {
+        "Client Collaboration": "Zusammenarbeit mit Kunden zur Anforderungserhebung und Entwicklung technischer Lösungen;",
+        "Project Development": "Entwicklung und Wartung individueller Webanwendungen (PHP, MySQL, JavaScript, jQuery);",
+        "Custom Extensions": "Erstellung von Modulen, Plugins und Komponenten für PrestaShop und Joomla;",
+        "Optimization & performance": "Optimierung der Website-Leistung (einschließlich SEO);",
+        "Google Ads": "Verwaltung und Optimierung von Google Ads-Kampagnen für mehrere Kunden."
+      }
+    },
+    {
+      "position": "Technischer Leiter | B2B-E-Commerce-Plattformentwicklung | Startup",
+      "company": "Fractus",
+      "location": "Tscherkassy, Ukraine",
+      "start_date": "2017-11",
+      "end_date": "2022-10",
+      "logo": "fractus.svg",
+      "description": "Leitete die technische Entwicklung und geschäftliche Umsetzung einer B2B-E-Commerce-Plattform mit Fokus auf Preisvergleich und Optimierung von Groß- und Einzelhandel. Aufbau der Plattform gemeinsam mit einem Team von Grund auf und Übersetzung sich entwickelnder Geschäftsanforderungen in technische Lösungen.",
+      "keywords": [
+        "Yii2",
+        "Symfony-Komponenten",
+        "MySQL",
+        "PHP",
+        "JavaScript",
+        "Agile",
+        "Bitbucket",
+        "CentOS"
+      ],
+      "responsibilities": {
+        "Team Management": "Rekrutierte das ursprüngliche Entwicklungsteam und arbeitete während des gesamten Projekts eng mit den Entwicklern zusammen;",
+        "Tech Leadership": "Arbeitete an der Systemarchitektur: Migrationen, Codebasis und Projektstruktur (PHP/Yii2, Symfony-Komponenten, MySQL);",
+        "Agile Management": "Überwachte zentrale Projektphasen und die bereichsübergreifende Zusammenarbeit; implementierte agile Methoden (Scrum/Kanban);",
+        "Server & Deployment": "Schrieb Code, führte Code-Reviews über Bitbucket durch, implementierte Code-Deployments und verwaltete die CentOS-Serverinfrastruktur;",
+        "Database Optimization": "Optimierte komplexe MySQL-Abfragen zur Verbesserung der Systemleistung und Effizienz."
+      }
+    },
+    {
+      "position": "Full-Stack-Webentwickler | Gründer eines Webstudios",
+      "company": "ProfiSite",
+      "location": "Tscherkassy, Ukraine",
+      "start_date": "2009-11",
+      "end_date": "2017-10",
+      "logo": "profisite.svg",
+      "description": "Gründete und entwickelte ein lokales Webstudio, das Full-Cycle-Webentwicklung vom technischen Konzept bis zur Wartung und Skalierung von Unternehmenswebsites anbot. Spezialisierung auf CMS-Plattformen (PrestaShop, Joomla, WordPress) und E-Commerce; erfolgreiche Umsetzung von über 250 Projekten in verschiedenen Branchen.",
+      "keywords": [
+        "PrestaShop",
+        "Joomla",
+        "WordPress",
+        "PHP",
+        "JavaScript",
+        "MySQL",
+        "HTML",
+        "CSS"
+      ],
+      "responsibilities": {
+        "Full-Cycle Development": "Entwicklung und Wartung von Backend- und Frontend-Systemen;",
+        "Custom Coding": "Erstellung responsiver HTML-Templates und Entwicklung individueller Module/Plugins (PHP, JavaScript, MySQL);",
+        "Team Collaboration": "Zusammenarbeit mit Designern, Content-Managern und SEO-Spezialisten;",
+        "Client Engagement": "Umsetzung von Geschäftsanforderungen in technische Lösungen und Aufbau langfristiger Kundenbeziehungen;",
+        "Technical support": "Bereitstellung von technischem Support, Fehlerbehebung und Optimierung;",
+        "Support & SEO": "Verwaltung und Optimierung von Google Ads-Kampagnen zur Verbesserung der Kundenpräsenz."
+      }
+    },
+    {
+      "position": "Freelance-Webentwickler",
+      "company": "Selbstständig",
+      "location": "Tscherkassy, Ukraine",
+      "start_date": "2008-10",
+      "end_date": "2009-10",
+      "logo": "freelancer.svg",
+      "description": "Tätig als freiberuflicher Webentwickler mit Fokus auf Frontend-Entwicklung und CMS-Integration für Kleinunternehmen und persönliche Projekte.",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "WordPress",
+        "Joomla"
+      ],
+      "responsibilities": {
+        "Template Development": "Entwicklung von Templates (HTML, CSS, jQuery);",
+        "CMS Integration": "Integration und Anpassung von Templates und Themes für WordPress und Joomla."
+      }
+    }
+  ],
+  "education": [
+    {
+      "start_date": "2021-09-05",
+      "end_date": "2025-07-10",
+      "area": "Digitale Wirtschaft (B.Sc.)",
+      "study_type": "Bachelorabschluss",
+      "institution": "Osteuropäische Universität für Wirtschaft und Management",
+      "logo": "east-european-university.svg",
+      "description": "Das Bachelorstudium in Digitaler Wirtschaft kombiniert IT- und Wirtschaftsfächer. Der Lehrplan umfasst Programmierung, Webentwicklung, Datenbankdesign und Datenanalyse sowie Geschäftsprozessmanagement, Projektplanung und Strategien der digitalen Transformation."
+    }
+  ]
+}

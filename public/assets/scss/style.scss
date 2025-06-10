@@ -47,6 +47,7 @@ body {
 @import "partials/sidebar";
 
 
+
 .company-logo {
   width: 5rem;
   height: 5rem;
@@ -56,27 +57,75 @@ body {
   border-radius: 50%;
 }
 
-header { // .sticky-top
+
+.profile-picture {
+  width: 100%;
+  padding-bottom: 1rem;
+
+  img {
+    max-width: 9rem;
+  }
+
+  &:not(.placeholder) {
+    text-align: center;
+
+    img {
+      border-radius: 50%;
+      background: url("../images/profile/profile_picture.jpeg") no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+
+header {
   position: sticky;
   top: 1rem;
-  //border-style: solid;
-  //border-width: var(--bs-border-width);
-  //border-color: var(--bs-border-color-translucent);
-  //border-radius: var(--bs-border-radius);
   padding: .75rem 1rem;
+
+  .theme-toggler {
+    border-radius: 50%;
+    span {
+      font-size: 1.25rem;
+      &:before {
+        font-family: 'Font Awesome 6 Free', serif;
+      }
+    }
+  }
 
   [data-bs-theme=light] & {
     background: #F8F8F8;
+
+    .theme-toggler {
+      span {
+        &:before {
+          content: '\f186';
+        }
+      }
+    }
   }
 
   [data-bs-theme=dark] & {
     background: #272B2F;
+    .theme-toggler {
+      span {
+        &:before {
+          content: '\f185';
+        }
+      }
+    }
   }
 
 }
 
+.navbar-toggler {
+  display: none;
+  @media (max-width: 992px) {
+    display: block;
+  }
+}
+
 #main-content {
-  //margin-top: 1rem;
   padding: 2rem .5rem;
 }
 

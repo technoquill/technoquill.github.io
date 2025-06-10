@@ -2,21 +2,31 @@
   @media (max-width: 992px) {
     display: none;
     width: 0;
+    //position: fixed;
+    //top: 1rem;
+    //z-index: 999;
+    //#sidebar {
+    //  min-width: 100vw;
+    //  width: 100vw;
+    //}
   }
 }
 
 
 #sidebar {
 
+  max-width: 22rem;
+
   [class*=col-] & {
-    min-width: 20rem;
+    min-width: 22rem;
     position: sticky;
     top: 1rem;
 
     @media (max-width: 992px) {
-      display: none;
-      position: fixed;
-      left: -20rem;
+      //display: none;
+      //display: block;
+      //position: absolute;
+      //left: 0;
     }
   }
 
@@ -37,24 +47,7 @@
     }
   }
 
-  #profile-picture {
-    width: 100%;
-    padding-bottom: 1rem;
 
-    img {
-      max-width: 9rem;
-    }
-
-    &:not(.placeholder) {
-      text-align: center;
-
-      img {
-        border-radius: 50%;
-        background: url("../images/profile/profile_picture.jpeg") no-repeat center center;
-        background-size: contain;
-      }
-    }
-  }
 
   h1 {
     padding: 1rem 0 0 0;

@@ -1,6 +1,4 @@
-
 const storageKey = 'theme';
-
 
 /**
  * Initializes Bootstrap components, specifically tooltips.
@@ -16,6 +14,7 @@ const initBootstrapComponents = () => {
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 }
 
+
 /**
  * Updates the content attribute of a meta-tag with the specified name.
  *
@@ -25,7 +24,7 @@ const initBootstrapComponents = () => {
 const changeMetaTag = (name, content) => {
     document.querySelector('meta[name="' + name + '"]')
         .setAttribute('content', content);
- }
+}
 
 
 /**
@@ -41,21 +40,21 @@ const changeMetaTag = (name, content) => {
  * - A predefined variable `storageKey` exists, representing the key for saving the theme in localStorage.
  */
 
-const switchTheme = () => {
-     const toggle = document.getElementById('theme-toggle');
-     // Theme Switcher
-     toggle.addEventListener('click', () => {
-         const currentTheme = document.body.getAttribute('data-bs-theme');
-         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-         // Set the theme to the body
-         document.body.setAttribute('data-bs-theme', newTheme);
-         // change meta[name='color-scheme']
-         changeMetaTag('color-scheme', newTheme);
-         // Save to localStorage newTheme
-         localStorage.setItem(storageKey, newTheme);
-
-     });
- }
+// const switchTheme = () => {
+//     const toggle = document.getElementById('theme-toggle');
+//     // Theme Switcher
+//     toggle.addEventListener('click', () => {
+//         const currentTheme = document.body.getAttribute('data-bs-theme');
+//         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+//         // Set the theme to the body
+//         document.body.setAttribute('data-bs-theme', newTheme);
+//         // change meta[name='color-scheme']
+//         changeMetaTag('color-scheme', newTheme);
+//         // Save to localStorage newTheme
+//         localStorage.setItem(storageKey, newTheme);
+//
+//     });
+// }
 
 
 /**
@@ -73,48 +72,23 @@ const switchTheme = () => {
  * - The `data-bs-theme` attribute of the document body to reflect the active theme.
  * - A meta-tag with the name `color-scheme` to align with the chosen theme.
  */
-const detectedTheme = () => {
-     // Check local storage or determine system theme
-     let savedTheme = localStorage.getItem(storageKey);
-
-     if (!savedTheme) {
-         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-             savedTheme = 'dark';
-         } else {
-             savedTheme = 'light';
-         }
-         localStorage.setItem(storageKey, savedTheme);
-     }
-     // Set the theme to body
-     document.body.setAttribute('data-bs-theme', savedTheme);
-     // change meta[name='color-scheme']
-     changeMetaTag('color-scheme', savedTheme);
- }
-
-/**
- * Retrieves the current Bootstrap theme applied to the document.
- *
- * This function accesses the `data-bs-theme` attribute of the document's
- * body element to determine the active theme. The value returned corresponds
- * to the theme currently set, which can be useful for dynamically adjusting
- * styles or behaviors based on the selected theme.
- *
- * @returns {string|null} The value of the `data-bs-theme` attribute indicating the current theme, or null if the attribute is not set.
- */
-const getTheme = () => {
-     return document.body.getAttribute('data-bs-theme');
- }
-
-
-/**
- *
- */
-document.addEventListener('DOMContentLoaded', () => {
-    initBootstrapComponents();
-    detectedTheme();
-    switchTheme();
-});
-
+// const detectedTheme = () => {
+//     // Check local storage or determine system theme
+//     let savedTheme = localStorage.getItem(storageKey);
+//
+//     if (!savedTheme) {
+//         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+//             savedTheme = 'dark';
+//         } else {
+//             savedTheme = 'light';
+//         }
+//         localStorage.setItem(storageKey, savedTheme);
+//     }
+//     // Set the theme to body
+//     document.body.setAttribute('data-bs-theme', savedTheme);
+//     // change meta[name='color-scheme']
+//     changeMetaTag('color-scheme', savedTheme);
+// }
 
 /**
  *
@@ -126,7 +100,7 @@ const wrapText = (text, wordsToWrap) => {
     if (!text) return '';
     const escapedWords = wordsToWrap.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')); // escape regex
     const regex = new RegExp(`\\b(${escapedWords.join('|')})\\b`, 'gi'); // word by word
-    return text.replace(regex, '<strong>$1</strong>'); // or <strong>, <span class="highlight"> etc.
+    return text.replace(regex, '<strong>$1</strong>');
 };
 
 
@@ -142,13 +116,23 @@ const strongLine = (strText, text) => {
 
 
 /**
+ * @returns {string|*}
+ */
+const getLocale = () => {
+    return typeof i18n.global.locale === 'string'
+        ? i18n.global.locale
+        : i18n.global.locale.value;
+};
+
+
+/**
  *
  * @param str
  * @returns {string}
  */
 const formatDate = (str) => {
     const [year, month] = str.split("-");
-    return new Date(year, month - 1).toLocaleString('default', {
+    return new Date(year, month - 1).toLocaleString(getLocale(), {
         year: 'numeric',
         month: 'long'
     });
@@ -159,14 +143,46 @@ const formatDate = (str) => {
  * @param img
  * @param type
  * @returns {string}
+ * @todo: make like an independent Class (obj)
  */
 const storage = (img, type) => {
-    if(img === 'placeholder' && !type) return '/public/assets/images/placeholder.png';
+    if (img === 'placeholder' && !type) return '/public/assets/images/placeholder.png';
     if (!type) {
         return '/public/assets/images/' + img;
     }
     return '/public/assets/images/' + type + '/' + img;
 }
 
+/**
+ *
+ */
+const switchLanguage = () => {
+    document.querySelectorAll('input[name="lang"]').forEach(input => {
+        input.addEventListener('change', async () => {
+            const lang = input.id;
+
+            i18n.global.locale = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+
+            const response = await fetch(`./data/json/${lang}/data.json`);
+            const data = await response.json();
+            document.title = data.meta_title;
+
+            // refresh global data
+            window.appData.value = data;
+        });
+    });
+};
+
+
+/**
+ * start theme methods
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    getLocale();
+    initBootstrapComponents();
+    switchLanguage();
+});
 
 
