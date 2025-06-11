@@ -20,7 +20,7 @@ const LocationComponent = {
     props: ['data'],
     template: `
     <address class="placeholder w-100">
-      <i class="fa-solid fa-location-dot"></i>
+      <i class="fa-solid fa-location-dot"></i>&nbsp;
       <span v-text="data.location"></span>
     </address>
   `
@@ -108,22 +108,23 @@ const ThemeToggleComponent = {
         }
     },
     mounted() {
-        // Встановлюємо theme в body та localStorage
+
+        // Setting the theme in body and localStorage
         document.body.setAttribute('data-bs-theme', this.mode);
         localStorage.setItem('theme', this.mode);
 
-        // Ініціалізуємо Bootstrap Tooltip
+        // Initializing the Bootstrap Tooltip
         const toggleBtn = this.$el.querySelector('#theme-toggle');
         if (window.bootstrap) {
             bootstrap.Tooltip.getOrCreateInstance(toggleBtn);
         }
-        // Слухаємо клік
+        // Listen to the click
         toggleBtn.addEventListener('click', () => {
             this.mode = this.mode === 'dark' ? 'light' : 'dark';
             document.body.setAttribute('data-bs-theme', this.mode);
             localStorage.setItem('theme', this.mode);
             toggleBtn.setAttribute('data-bs-title', this.tooltip);
-            // Оновлюємо tooltip
+            // Updating the tooltip
             if (window.bootstrap) {
                 const tip = bootstrap.Tooltip.getOrCreateInstance(toggleBtn);
                 tip.setContent({ '.tooltip-inner': this.tooltip });
@@ -132,7 +133,7 @@ const ThemeToggleComponent = {
     },
     watch: {
         mode(newMode) {
-            // Дублюємо логіку оновлення tooltip при зміні теми ззовні (наприклад, через localStorage)
+            // We duplicate the logic of updating the tooltip when changing the theme from outside (for example, via localStorage)
             const toggleBtn = this.$el.querySelector('#theme-toggle');
             toggleBtn.setAttribute('data-bs-title', this.tooltip);
             if (window.bootstrap) {
@@ -220,8 +221,6 @@ const NavbarComponent = {
 };
 
 
-
-
 /**
  *
  * @type {{props: string[], template: string}}
@@ -230,7 +229,7 @@ const ArticleHeaderComponent = {
     props: ['data'],
     template: `
      <h1 class="placeholder w-100">
-        <span v-html="data.name"></span>
+        <span class="heading" v-html="data.name"></span>
      </h1>
     `
 };
@@ -243,7 +242,7 @@ const AboutMeSectionComponent = {
     template: `
     <section class="about-me placeholder-glow" id="about-me">
       <h2 class="placeholder w-90">
-        <span class="aim" v-text="data.title"></span>
+        <span class="sub-heading" v-text="data.title"></span>
       </h2>
       <div>
         <p class="placeholder w-100" v-html="data.summary"></p>

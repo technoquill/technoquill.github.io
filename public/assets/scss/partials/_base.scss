@@ -1,0 +1,23 @@
+@media (min-width: 2560px) {
+  html {
+    font-size: 1.125vw;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.col-auto {
+  @media (max-width: 992px) {
+    display: none;
+    width: 0;
+  }
+}
+
+#main-content {
+  padding: 2rem .5rem;
+}
+
+

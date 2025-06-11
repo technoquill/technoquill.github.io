@@ -51,7 +51,7 @@
             </aside>
 
             <main class="col">
-                <header class="placeholder w-100">
+                <header class="placeholder-glow">
                     <div class="d-flex flex-row justify-content-end align-items-center">
                         <!-- start .theme-toggler section -->
                         <theme-toggle-component></theme-toggle-component>
@@ -153,7 +153,7 @@
             window.i18n = i18n;
 
             onMounted(async () => {
-                const url = `./data/json/${locale}/data.json`;
+                const url = `./data/${locale}/data.json`;
                 const response = await fetch(url);
                 data.value = await response.json();
                 // Set meta.title & locale

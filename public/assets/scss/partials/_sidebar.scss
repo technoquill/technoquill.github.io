@@ -1,13 +1,5 @@
-.col-auto {
-  @media (max-width: 992px) {
-    display: none;
-    width: 0;
-  }
-}
-
 
 #sidebar {
-
   max-width: 22rem;
 
   [class*=col-] & {
@@ -26,22 +18,6 @@
     &-header {
       padding: 2rem 1rem;
       border: none;
-    }
-  }
-
-  .links-list {
-    padding: 0 0 0 2rem;
-    list-style: none;
-    font-size: 1.125rem;
-    margin: .5rem 0;
-    li {
-      padding: 0.125rem 0;
-      a {
-        text-decoration: none;
-        i {
-          margin-right: 0.5rem;
-        }
-      }
     }
   }
 

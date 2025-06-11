@@ -198,7 +198,6 @@ function updateThemeTooltip(i18n) {
     }
 }
 
-
 /**
  * start theme methods
  */

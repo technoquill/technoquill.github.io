@@ -1,0 +1,74 @@
+
+.sub-heading {
+  color: var(--bs-primary);
+}
+
+
+.company-logo {
+  width: 5rem;
+  height: 5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80%;
+  border-radius: 50%;
+}
+
+
+
+.profile-picture {
+  width: 100%;
+  padding-bottom: 1rem;
+
+  img {
+    max-width: 9rem;
+  }
+
+  &:not(.placeholder) {
+    text-align: center;
+    img {
+      border-radius: 50%;
+      background: url("../images/profile/profile_picture.jpeg") no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+
+.links-list {
+  padding: 0 0 0 2rem;
+  list-style: none;
+  font-size: 1.125rem;
+  margin: .5rem 0;
+  li {
+    padding: 0.125rem 0;
+    a {
+      text-decoration: none;
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+
+#qrModal {
+  .modal-body {
+    padding: 0;
+  }
+}
+
+
+
+.qr-v-card {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  [data-bs-theme=light] & {
+    background-image: url("../../../public/vcard/light/qrcode.svg");
+  }
+
+  [data-bs-theme=dark] & {
+    background-image: url("../../../public/vcard/dark/qrcode.svg");
+  }
+}
