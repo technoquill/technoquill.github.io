@@ -4,7 +4,7 @@
 const ProfilePictureComponent = {
     props: ['src'],
     template: `
-    <div class="profile-picture placeholder">
+    <div class="profile-picture">
       <img class="img-fluid rounded-circle"
            :src="src"
            alt="Profile picture" />
@@ -96,8 +96,8 @@ const VCardButtonsComponent = {
  */
 const ThemeToggleComponent = {
     data() {
-        // Встановлюємо збережену тему або беремо з body
-        let mode = localStorage.getItem('theme') || document.body.getAttribute('data-bs-theme') || 'light';
+        autoDetectAndSetTheme();
+        let mode = localStorage.getItem(storageKey);
         return { mode };
     },
     computed: {

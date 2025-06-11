@@ -2,13 +2,6 @@
   @media (max-width: 992px) {
     display: none;
     width: 0;
-    //position: fixed;
-    //top: 1rem;
-    //z-index: 999;
-    //#sidebar {
-    //  min-width: 100vw;
-    //  width: 100vw;
-    //}
   }
 }
 
@@ -21,13 +14,6 @@
     min-width: 22rem;
     position: sticky;
     top: 1rem;
-
-    @media (max-width: 992px) {
-      //display: none;
-      //display: block;
-      //position: absolute;
-      //left: 0;
-    }
   }
 
   &-content {
@@ -38,23 +24,9 @@
     border: none;
     height: 100vh;
     &-header {
-      //text-align: center;
       padding: 2rem 1rem;
       border: none;
     }
-    &-body {
-      //background: lighten(#272B2F, 2%);
-    }
-  }
-
-
-
-  h1 {
-    padding: 1rem 0 0 0;
-    //font-size: 2.25rem;
-  }
-  address {
-    //text-align: center;
   }
 
   .links-list {

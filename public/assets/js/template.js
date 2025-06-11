@@ -1,3 +1,6 @@
+/**
+ * @type {string}
+ */
 const storageKey = 'theme';
 
 /**
@@ -10,8 +13,9 @@ const storageKey = 'theme';
  */
 const initBootstrapComponents = () => {
     // tooltip
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    //
 }
 
 
@@ -28,73 +32,47 @@ const changeMetaTag = (name, content) => {
 
 
 /**
- * A function to toggle between light and dark themes on a webpage.
- * It attaches a click event listener to a theme toggle button and updates the theme accordingly.
- * The function also updates the HTML body's data attribute to reflect the current theme,
- * modifies the meta-tag related to the color scheme, and saves the selected theme to local storage.
+ * Automatically detects and applies the system or saved theme preference.
  *
- * This function assumes the following:
- * - The toggle button has an ID of 'theme-toggle'.
- * - The theme setting is stored in the `data-bs-theme` attribute on the `<body>` tag.
- * - A helper function `changeMetaTag(name, content)` exists for updating meta-tags.
- * - A predefined variable `storageKey` exists, representing the key for saving the theme in localStorage.
+ * This function checks for a saved theme in the local storage. If a saved theme does not exist,
+ * it detects the system's preferred color scheme (light or dark) and sets it as the theme.
+ * The detected or saved theme is then saved back to local storage to persist the preference.
+ * Once determined, the theme is applied by setting the appropriate attributes and meta tags.
+ *
+ * Side Effects:
+ * - Sets the `data-bs-theme` attribute on the document's `<body>` element.
+ * - Updates the `<meta name="color-scheme">` tag to match the current theme.
+ *
+ * Dependencies:
+ * - Requires a `storageKey` variable defined elsewhere for accessing local storage.
+ * - Relies on a `changeMetaTag` function to modify the `<meta>` tag values.
  */
+const autoDetectAndSetTheme = () => {
+    // Check local storage or determine system theme
+    let savedTheme = localStorage.getItem(storageKey);
 
-// const switchTheme = () => {
-//     const toggle = document.getElementById('theme-toggle');
-//     // Theme Switcher
-//     toggle.addEventListener('click', () => {
-//         const currentTheme = document.body.getAttribute('data-bs-theme');
-//         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-//         // Set the theme to the body
-//         document.body.setAttribute('data-bs-theme', newTheme);
-//         // change meta[name='color-scheme']
-//         changeMetaTag('color-scheme', newTheme);
-//         // Save to localStorage newTheme
-//         localStorage.setItem(storageKey, newTheme);
-//
-//     });
-// }
+    if (!savedTheme) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            savedTheme = 'dark';
+        } else {
+            savedTheme = 'light';
+        }
+        localStorage.setItem(storageKey, savedTheme);
+    }
+    // Set the theme to body
+    document.body.setAttribute('data-bs-theme', savedTheme);
+    // change meta[name='color-scheme']
+    changeMetaTag('color-scheme', savedTheme);
+}
 
 
 /**
- * Determines and applies the active theme for the application.
+ * A function that wraps specified words in a given text with an HTML strong tag.
+ * This highlights the words by wrapping them with `<strong>` tags.
  *
- * Checks the user's saved theme preference from local storage. If no preference is found,
- * it determines the theme based on the system's color scheme (dark or light). The detected
- * or default theme is then saved in local storage, applied to the `data-bs-theme` attribute
- * on the document body, and updated in the corresponding meta-tag for compatibility.
- *
- * Relies on the browser's `window.matchMedia` API for detecting system preferences and
- * interacts with local storage to persist the user's preferred theme across sessions.
- *
- * This function modifies the following:
- * - The `data-bs-theme` attribute of the document body to reflect the active theme.
- * - A meta-tag with the name `color-scheme` to align with the chosen theme.
- */
-// const detectedTheme = () => {
-//     // Check local storage or determine system theme
-//     let savedTheme = localStorage.getItem(storageKey);
-//
-//     if (!savedTheme) {
-//         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-//             savedTheme = 'dark';
-//         } else {
-//             savedTheme = 'light';
-//         }
-//         localStorage.setItem(storageKey, savedTheme);
-//     }
-//     // Set the theme to body
-//     document.body.setAttribute('data-bs-theme', savedTheme);
-//     // change meta[name='color-scheme']
-//     changeMetaTag('color-scheme', savedTheme);
-// }
-
-/**
- *
- * @param text
- * @param wordsToWrap
- * @returns {*|string}
+ * @param {string} text - The input string in which words need to be wrapped.
+ * @param {string[]} wordsToWrap - An array of words that should be wrapped with the strong tag.
+ * @returns {string} The modified string with specified words wrapped in <strong> tags. If the input text is empty or undefined, an empty string is returned.
  */
 const wrapText = (text, wordsToWrap) => {
     if (!text) return '';
@@ -105,10 +83,12 @@ const wrapText = (text, wordsToWrap) => {
 
 
 /**
+ * Constructs a formatted string that highlights the given `strText` in bold
+ * and appends the `text` after it separated by a colon.
  *
- * @param strText
- * @param text
- * @returns {string}
+ * @param {string} strText - The text to be highlighted in bold.
+ * @param {string} text - The text to be appended after the bold text.
+ * @returns {string} A formatted string with `strText` emphasized in bold followed by `text`.
  */
 const strongLine = (strText, text) => {
     return '<strong>' + strText + '</strong>: ' + text;
@@ -116,7 +96,11 @@ const strongLine = (strText, text) => {
 
 
 /**
- * @returns {string|*}
+ * Retrieves the current locale from the `i18n` global object.
+ * If the `locale` property is of type string, it directly returns the string value.
+ * Otherwise, it assumes the `locale` property is an object with a `value` property and returns that value.
+ *
+ * @returns {string} The current locale as a string.
  */
 const getLocale = () => {
     return typeof i18n.global.locale === 'string'
@@ -126,9 +110,14 @@ const getLocale = () => {
 
 
 /**
+ * Converts a date string in the format "YYYY-MM" into a localized, human-readable month and year format.
  *
- * @param str
- * @returns {string}
+ * The function splits the input string to extract the year and month, creates a JavaScript Date object,
+ * and formats the date using the locale settings provided by `getLocale`. The output will include a full
+ * numeric year and the full name of the month.
+ *
+ * @param {string} str - The input date string in the format "YYYY-MM".
+ * @returns {string} The formatted date string in the localized format with year and month name.
  */
 const formatDate = (str) => {
     const [year, month] = str.split("-");
@@ -139,11 +128,14 @@ const formatDate = (str) => {
 };
 
 /**
+ * A function to determine the storage path for images based on the provided image name and type.
  *
- * @param img
- * @param type
- * @returns {string}
- * @todo: make like an independent Class (obj)
+ * @function
+ * @param {string} img - The name of the image or a placeholder keyword.
+ * @param {string} [type] - An optional type specifying a subdirectory for categorization.
+ * @returns {string} The storage path for the image based on the input parameters.
+ *
+ * @todo Refactor this function to be part of an independent class or object for better modularity.
  */
 const storage = (img, type) => {
     if (img === 'placeholder' && !type) return '/public/assets/images/placeholder.png';
@@ -154,7 +146,14 @@ const storage = (img, type) => {
 }
 
 /**
+ * Binds event listeners to language selection inputs and updates the application's language settings.
  *
+ * When a language input is changed, this function performs the following actions:
+ * - Updates the current language of the i18n global instance.
+ * - Stores the selected language in localStorage for persistence.
+ * - Updates the document's `lang` attribute to match the selected language.
+ * - Fetches the corresponding localization data from a JSON file and updates the application's meta title and global data values.
+ * - Calls a helper function to refresh UI tooltips with the updated language settings.
  */
 const switchLanguage = () => {
     document.querySelectorAll('input[name="lang"]').forEach(input => {
@@ -171,9 +170,33 @@ const switchLanguage = () => {
 
             // refresh global data
             window.appData.value = data;
+
+            // Update tooltips
+            updateThemeTooltip(i18n);
         });
     });
 };
+
+/**
+ * Updates the tooltip of the theme toggle button based on the current theme mode.
+ *
+ * @param {Object} i18n - The internationalization object, typically used for translating messages.
+ * @param {Object} i18n.global - The global translation object.
+ * @param {Function} i18n.global.t - Translate function that retrieves the appropriate message by key.
+ * @return {void} This method does not return any value.
+ */
+function updateThemeTooltip(i18n) {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+        const mode = document.body.getAttribute('data-bs-theme') || 'light';
+        const key = mode === 'dark' ? 'message.light_mode' : 'message.dark_mode';
+        toggleBtn.setAttribute('data-bs-title', i18n.global.t(key));
+        if (window.bootstrap) {
+            const tip = bootstrap.Tooltip.getOrCreateInstance(toggleBtn);
+            tip.setContent({ '.tooltip-inner': i18n.global.t(key) });
+        }
+    }
+}
 
 
 /**

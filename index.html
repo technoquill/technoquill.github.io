@@ -51,11 +51,8 @@
             </aside>
 
             <main class="col">
-
                 <header class="placeholder w-100">
-
                     <div class="d-flex flex-row justify-content-end align-items-center">
-
                         <!-- start .theme-toggler section -->
                         <theme-toggle-component></theme-toggle-component>
                         <!-- end .theme-toggler section -->
@@ -72,14 +69,10 @@
                         <!-- start .navbar section -->
                         <navbar-component :data="data" :storage="storage"></navbar-component>
                         <!-- end .navbar section -->
-
                     </div>
-
                 </header>
 
-
                 <article id="main-content">
-
                     <!-- start h1 header -->
                     <article-header-component :data="data"></article-header-component>
                     <!-- end h1 header -->
@@ -108,14 +101,12 @@
                             :format-date="formatDate"
                     ></education-section-component>
                     <!-- end .education section -->
-
                 </article>
-
             </main>
+
         </div>
 
     </div>
-
 
     <!-- Start Qr Modal -->
     <qr-modal-component :storage="storage"></qr-modal-component>
@@ -141,51 +132,12 @@
 <script type="module">
     import {createApp, ref, onMounted, nextTick} from 'vue';
     import {createI18n} from 'vue-i18n';
+    import en from './public/assets/js/i18n/en.js';
+    import de from './public/assets/js/i18n/de.js';
 
+    export const messages = {en, de};
     const savedLang = localStorage.getItem('lang') || 'en';
-
-    const messages = {
-        en: {
-            message: {
-                "lang_full": "English",
-                "lang_short": "en",
-                "about_me": "About Me",
-                "skills": "Skills",
-                "experience": "Experience",
-                "networks": "Networks",
-                "languages": "Languages",
-                "education": "Education",
-                "courses_and_certificates": "Courses and certificates",
-                "close": "Close",
-                "save_vcard": "Save V-Card",
-                "open_qr_contacts": "Open Qr contacts",
-                "qr_contacts": "Qr contacts",
-                "dark_mode": "Dark mode",
-                "light_mode": "Light mode",
-            }
-        },
-        de: {
-            message: {
-                "lang_full": "Deutsch",
-                "lang_short": "de",
-                "menu": "Menü",
-                "home": "Startseite",
-                "about_me": "Über mich",
-                "skills": "Fähigkeiten",
-                "experience": "Erfahrung",
-                "networks": "Netzwerke",
-                "languages": "Sprachen",
-                "education": "Ausbildung",
-                "courses_and_certificates": "Kurse und Zertifikates",
-                "close": "Schließen",
-                "save_vcard": "V-Card speichern",
-                "open_qr_contacts": "QR-Kontakte öffnen",
-                "qr_contacts": "QR-Kontakte",
-                "dark_mode": "Dunkelmodus",
-                "light_mode": "Lichtmodus",
-            }
-        }
-    };
+    const locales = Object.keys(messages);
 
     const i18n = createI18n({
         locale: savedLang,
@@ -193,12 +145,8 @@
         messages: messages
     });
 
-    const locales = Object.keys(messages);
-
-
     const app = createApp({
         setup() {
-
             const data = ref({}); // init data
             const locale = i18n.global.locale;
             window.appData = data; // set globals
@@ -208,11 +156,12 @@
                 const url = `./data/json/${locale}/data.json`;
                 const response = await fetch(url);
                 data.value = await response.json();
-                // Set meta.title
+                // Set meta.title & locale
                 document.title = data.value.meta_title;
                 document.documentElement.lang = locale;
                 //
                 await nextTick();
+
                 // remove placeholder
                 Array.from(document.getElementsByClassName("placeholder")).forEach(function (item) {
                     item.classList.remove("placeholder");
@@ -227,7 +176,6 @@
                 getLocale,
                 locales
             }
-
         }
     }).use(i18n);
 

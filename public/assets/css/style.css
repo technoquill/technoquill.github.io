@@ -56,9 +56,6 @@ body {
   padding: 2rem 1rem;
   border: none;
 }
-#sidebar h1 {
-  padding: 1rem 0 0 0;
-}
 #sidebar .links-list {
   padding: 0 0 0 2rem;
   list-style: none;
