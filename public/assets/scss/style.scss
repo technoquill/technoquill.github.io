@@ -1,120 +1,14 @@
-:root, [data-bs-theme=light], [data-bs-theme=dark] {
-  --bs-border-radius: 0;
-  --bs-border-radius-sm: 0;
-  --bs-border-radius-lg: 0;
-  --bs-border-radius-xl: 0;
-  --bs-border-radius-xxl: 0;
-}
 
-@media (min-width: 2560px) {
-  html {
-    font-size: 1vw;
-  }
-}
-@media (max-width: 768px) {
-  html {
-    //font-size-adjust: 0.5;
-  }
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.overhead {
-  min-height: 1rem;
-}
+@import "partials/base";
+@import "partials/variables";
+@import "partials/overhead";
+@import "partials/sidebar";
+@import "partials/header";
+@import "partials/elements";
 
 
-#wrapper {
 
-  //max-width: 1680px;
-  //margin: 0 auto;
-}
 
-#sidebar {
-  min-width: 20rem;
 
-  &-content {
-    position: fixed;
-    min-width: 320px;
-    height: 100vh;
-    //background-color: #E8E8E9;
 
-  }
-}
-
-#profile-picture {
-  width: 100%;
-  //margin-top: 2rem;
-  img {
-    max-width: 8rem;
-  }
-
-  &:not(.placeholder) {
-    text-align: center;
-
-    img {
-      border-radius: 50%;
-      background: url("../images/profile/profile_picture.jpeg") no-repeat center center;
-      background-size: contain;
-    }
-  }
-}
-
-#vcard {
-  max-width: 20rem;
-}
-
-.company-logo {
-  width: 5rem;
-  height: 5rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 80%;
-  border-radius: 50%;
-}
-
-header.sticky-top {
-  border-style: solid;
-  border-width: var(--bs-border-width);
-  border-color: var(--bs-border-color-translucent);
-  border-radius: var(--bs-border-radius);
-  padding: 1rem 2rem;
-
-  [data-bs-theme=light] & {
-    background: #F8F8F8;
-  }
-
-  [data-bs-theme=dark] & {
-    background: #272B2F;
-  }
-
-}
-
-#main-content {
-  margin-top: 1rem;
-}
-
-#qrModal {
-  .modal-body {
-    padding: 0;
-  }
-}
-
-.qr-v-card {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  [data-bs-theme=light] & {
-    background-image: url("../../../public/vcard/light/qrcode.svg");
-  }
-
-  [data-bs-theme=dark] & {
-    background-image: url("../../../public/vcard/dark/qrcode.svg");
-  }
-}
 

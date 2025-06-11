@@ -14,19 +14,111 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link href="public/assets/css/style.css" rel="stylesheet">
     <title></title>
-    <!-- Created by M.Kulyk as part of training and prepare to the feature job interview -->
+    <!-- Created by M. Kulyk as part of training and prepare to the feature job interview -->
 </head>
 <body>
 
 <div id="wrapper">
 
+    <div class="container-fluid">
+        <div class="row overhead">
+            <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <aside class="col-auto" id="sidebar-wrapper" role="complementary" aria-label="sidebar">
+                <div id="sidebar">
+                    <div id="sidebar-content">
+                        <div class="placeholder-glow">
+                            <div id="vcard">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <profile-picture-component
+                                                :src="storage('placeholder')"></profile-picture-component>
+                                        <location-component :data="data"></location-component>
+                                        <networks-component :data="data"></networks-component>
+                                        <languages-component :data="data"></languages-component>
+                                        <v-card-buttons-component></v-card-buttons-component>
+                                    </div>
+                                    <div class="card-body">
 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+
+            <main class="col">
+                <header class="placeholder-glow">
+                    <div class="d-flex flex-row justify-content-end align-items-center">
+                        <!-- start .theme-toggler section -->
+                        <theme-toggle-component></theme-toggle-component>
+                        <!-- end .theme-toggler section -->
+
+                        <!-- start .lang-switcher section -->
+                        <lang-switcher-component
+                                :locales="locales"
+                                :get-locale="getLocale"
+                                @change="switchLanguage"
+                        >
+                        </lang-switcher-component>
+                        <!-- end .lang-switcher section -->
+
+                        <!-- start .navbar section -->
+                        <navbar-component :data="data" :storage="storage"></navbar-component>
+                        <!-- end .navbar section -->
+                    </div>
+                </header>
+
+                <article id="main-content">
+                    <!-- start h1 header -->
+                    <article-header-component :data="data"></article-header-component>
+                    <!-- end h1 header -->
+
+                    <!-- start .about-me section -->
+                    <about-me-section-component :data="data"></about-me-section-component>
+                    <!-- end .about-me section -->
+
+                    <!-- start .experiences section -->
+                    <experience-section-component
+                            :data="data"
+                            :locale="locale"
+                            :storage="storage"
+                            :format-date="formatDate"
+                            :wrap-text="wrapText"
+                            :strong-line="strongLine"
+                    >
+                    </experience-section-component>
+                    <!-- end .experiences section -->
+
+                    <!-- start .education section -->
+                    <education-section-component
+                            :data="data"
+                            :locale="locale"
+                            :storage="storage"
+                            :format-date="formatDate"
+                    ></education-section-component>
+                    <!-- end .education section -->
+                </article>
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Start Qr Modal -->
+    <qr-modal-component :storage="storage"></qr-modal-component>
+    <!-- End Qr Modal -->
 
 
 </div>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="public/assets/js/template.js"></script>
+<script src="public/assets/js/components.js"></script>
 <script type="importmap">
     {
   "imports": {
@@ -38,54 +130,83 @@
 </script>
 
 <script type="module">
-    import {createApp, ref, reactive, onMounted, nextTick} from 'vue';
+    import {createApp, ref, onMounted, nextTick} from 'vue';
     import {createI18n} from 'vue-i18n';
+    import en from './public/assets/js/i18n/en.js';
+    import de from './public/assets/js/i18n/de.js';
+
+    export const messages = {en, de};
+    const savedLang = localStorage.getItem('lang') || 'en';
+    const locales = Object.keys(messages);
 
     const i18n = createI18n({
-        locale: 'en',
-        fallbackLng: 'en',
-        messages: {
-            en: {
-                message: {
-                    "menu": "Menu",
-                    "opportunities_as": "Looking for new opportunities and a company that I can grow with a",
-                    "about_me": "About Me",
-                    "skills": "Skills",
-                    "experience": "Experience",
-                    "responsibilities": "Responsibilities",
-                    "achievements": "Achievements",
-                }
-            }
-        }
+        locale: savedLang,
+        fallbackLocale: 'en',
+        messages: messages
     });
 
-
-    createApp({
+    const app = createApp({
         setup() {
-            const data = ref({});
-            const url = './data/json/en/data.json';
+            const data = ref({}); // init data
+            const locale = i18n.global.locale;
+            window.appData = data; // set globals
+            window.i18n = i18n;
 
             onMounted(async () => {
+                const url = `./data/${locale}/data.json`;
                 const response = await fetch(url);
                 data.value = await response.json();
+                // Set meta.title & locale
+                document.title = data.value.meta_title;
+                document.documentElement.lang = locale;
+                //
                 await nextTick();
+
                 // remove placeholder
                 Array.from(document.getElementsByClassName("placeholder")).forEach(function (item) {
                     item.classList.remove("placeholder");
                 });
-                // Set meta.title
-                document.title = data.value.meta_title;
             });
-
-            return {data, formatDate, wrapText, storage, strongLine}
-
+            return {
+                data,
+                formatDate,
+                wrapText,
+                storage,
+                strongLine,
+                getLocale,
+                locales
+            }
         }
-    })
-        .use(i18n)
-        .mount('#wrapper');
+    }).use(i18n);
+
+    /**
+     * @param app
+     */
+    const registerComponents = (app) => {
+        // Sidebar
+        app.component('profile-picture-component', ProfilePictureComponent);
+        app.component('location-component', LocationComponent);
+        app.component('networks-component', NetworksComponent);
+        app.component('languages-component', LanguagesComponent);
+        app.component('v-card-buttons-component', VCardButtonsComponent);
+        // Navbar
+        app.component('theme-toggle-component', ThemeToggleComponent);
+        app.component('lang-switcher-component', LangSwitcherComponent);
+        app.component('navbar-component', NavbarComponent);
+        // Article
+        app.component('article-header-component', ArticleHeaderComponent);
+        app.component('about-me-section-component', AboutMeSectionComponent);
+        app.component('experience-section-component', ExperienceSectionComponent);
+        app.component('education-section-component', EducationSectionComponent);
+        // Modal & others
+        app.component('qr-modal-component', QrModalComponent);
+    };
+
+    registerComponents(app);
+
+    app.mount('#wrapper');
 
 </script>
-
 
 </body>
 </html>

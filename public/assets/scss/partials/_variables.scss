@@ -1,0 +1,12 @@
+:root {
+  --custom-light:  #F8F8F8;
+  --custom-dark: #272B2F;
+}
+:root, [data-bs-theme=light], [data-bs-theme=dark] {
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-border-radius-xl: 0;
+  --bs-border-radius-xxl: 0;
+
+}

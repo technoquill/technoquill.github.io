@@ -1,0 +1,24 @@
+
+#sidebar {
+  max-width: 22rem;
+
+  [class*=col-] & {
+    min-width: 22rem;
+    position: sticky;
+    top: 1rem;
+  }
+
+  &-content {
+    height: 100vh;
+  }
+
+  .card {
+    border: none;
+    height: 100vh;
+    &-header {
+      padding: 2rem 1rem;
+      border: none;
+    }
+  }
+
+}

@@ -1,0 +1,183 @@
+{
+  "name": "Mykhailo Kulyk",
+  "meta_title": "PHP Developer | Skilled in Legacy Code, Modern Frameworks, CMS Integration | Full-Stack Skills: PHP, MySQL, JavaScript, HTML, SCSS/CSS",
+  "title": "Full Stack & Backend PHP Developer",
+  "location": "Mannheim, Baden-Württemberg, GE",
+  "summary": "Experienced Full-Stack PHP developer with a strong focus on delivering results and maintaining high standards throughout the project lifecycle. I consistently follow defined priorities and tasks, and strive to write clean, maintainable code while effectively understanding and working with code written by others.",
+  "purpose": "I am looking for a long-term position in a stable, technically mature team where I can leverage my expertise, broaden my technology stack, solve complex technical challenges, and deliver long-term value to my future employer.",
+  "links": [
+    {
+      "title": "LinkedIn",
+      "src": "//linkedin.com/in/mykhailo-kulyk-php-developer/",
+      "icon": "fa-brands fa-linkedin"
+    },
+    {
+      "title": "GitHub",
+      "src": "//github.com/technoquill",
+      "icon": "fa-brands fa-square-git"
+    }
+  ],
+  "skills" : {
+    "Backend": "PHP 7/8 (OOP, SOLID, MVC, Design Patterns), Yii2, Laravel, Symfony;",
+    "Frontend": "HTML5, SCSS/CSS, JavaScript (ES6+), Vue3, jQuery, Bootstrap;",
+    "CMS": "PrestaShop, Joomla, WordPress;",
+    "Databases": "MySQL (architecture, optimization);",
+    "Server & Deployment": "Linux, (CentOS, Debian, Ubuntu), NGINX, bash, deployment processes;",
+    "Tools & Platforms": "Git, Bitbucket, Jira;",
+    "Methodologies": "Agile, (Scrum, Kanban);",
+    "Additional": "Basic, technical SEO, Google Ads management."
+  },
+  "tags": [
+    "OOP",
+    "SOLID",
+    "KISS",
+    "DRY",
+    "YAGNI",
+    "PHP",
+    "MySQL",
+    "JavaScript",
+    "jQuery",
+    "Laravel 8",
+    "Symfony 5/6",
+    "PrestaShop 8",
+    "Joomla",
+    "Joomla 4",
+    "Yii2",
+    "Laravel",
+    "Symfony",
+    "PrestaShop",
+    "WordPress",
+    "Debian",
+    "CentOS",
+    "Ubuntu",
+    "Nginx",
+    "Apache",
+    "HTML5",
+    "SCSS/CSS3",
+    "Bootstrap",
+    "Agile",
+    "Scrum",
+    "Kanban",
+    "Jira",
+    "Git",
+    "Bitbucket"
+  ],
+  "experience": [
+    {
+      "position": "Full-Stack PHP Developer",
+      "company": "Self-employed",
+      "location": "Cherkasy, Ukraine",
+      "start_date": "2022-11",
+      "end_date": "2023-12",
+      "logo": "freelancer.svg",
+      "description": "Delivered full-cycle development for client projects using PHP Frameworks (Laravel 8, Symfony 5/6) and CMS platforms (PrestaShop 8, Joomla 4). Handled backend and frontend tasks from planning to deployment.",
+      "keywords": [
+        "Laravel 8",
+        "Symfony 5/6",
+        "PrestaShop 8",
+        "Joomla 4",
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "jQuery"
+      ],
+      "responsibilities": {
+        "Client Collaboration": "Collaborated with clients to gather requirements and provide technical solutions;",
+        "Project Development": "Developed and maintained custom web applications (PHP, MySQL, JavaScript, jQuery);",
+        "Custom Extensions": "Built modules, plugins, and components for PrestaShop and Joomla;",
+        "Optimization & performance": "Optimized websites performance (including SEO);",
+        "Google Ads": "Managed and optimized Google Ads campaigns for several clients."
+      }
+    },
+    {
+      "position": "Head of Technology | B2B E-commerce Platform Development | Startup",
+      "company": "Fractus",
+      "location": "Cherkasy, Ukraine",
+      "start_date": "2017-11",
+      "end_date": "2022-10",
+      "logo": "fractus.svg",
+      "description": "Led the technical development and business implementation of a B2B e-commerce platform focused on price comparison and wholesale/retail optimization. Built the platform from scratch together with a team, translating evolving business needs into technical solutions.",
+      "keywords": [
+        "Yii2",
+        "Symfony Components",
+        "MySQL",
+        "PHP",
+        "JavaScript",
+        "Agile",
+        "Bitbucket",
+        "CentOS"
+      ],
+      "responsibilities": {
+        "Team Management": "Recruited the initial development team and worked closely with developers throughout the project;",
+        "Tech Leadership": "Worked on system architecture: migrations, codebase and project structure (PHP/Yii2, Symfony components, MySQL);",
+        "Agile Management": "Oversaw key project phases and cross-functional collaboration; implemented agile methodologies (Scrum/Kanban);",
+        "Server & Deployment": "Wrote code, conducted code reviews via Bitbucket, and handled code deployment and CentOS server administration;",
+        "Database Optimization": "Optimized complex MySQL queries to improve system performance and efficiency."
+      }
+    },
+    {
+      "position": "Full-Stack Web Developer | Founder of a Web Studio",
+      "company": "ProfiSite",
+      "location": "Cherkasy, Ukraine",
+      "start_date": "2009-11",
+      "end_date": "2017-10",
+      "logo": "profisite.svg",
+      "description": "Founded and developed a local web studio that delivered full-cycle web development, from technical concept to maintenance and scaling of corporate websites. Specialized in CMS platforms (PrestaShop, Joomla, WordPress) and e-commerce, and completed 250+ projects across various industries.",
+      "keywords": [
+        "PrestaShop",
+        "Joomla",
+        "WordPress",
+        "PHP",
+        "JavaScript",
+        "MySQL",
+        "HTML",
+        "CSS"
+      ],
+      "responsibilities": {
+        "Full-Cycle Development": "Built and maintained backend and frontend systems;",
+        "Custom Coding": "Created responsive HTML templates and developed custom modules/plugins (PHP, JavaScript, MySQL);",
+        "Team Collaboration": "Collaborated with designers, content managers, and SEO specialists;",
+        "Client Engagement": "Translated business requirements into technical solutions and built long-term client relationships;",
+        "Technical support": "Provided technical support, troubleshooting, and optimization;",
+        "Support & SEO": "Managed and optimized Google Ads campaigns to enhance client visibility."
+      }
+    },
+    {
+      "position": "Freelance Web Developer",
+      "company": "Self-employed",
+      "location": "Cherkasy, Ukraine",
+      "start_date": "2008-10",
+      "end_date": "2009-10",
+      "logo": "freelancer.svg",
+      "description": "Worked as a freelance web developer focused on frontend development and CMS integration for small businesses and personal projects.",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "WordPress",
+        "Joomla"
+      ],
+      "responsibilities": {
+        "Template Development": "Developed templates (HTML, CSS, jQuery);",
+        "CMS Integration": "Integrated and customized templates, themes for WordPress and Joomla."
+      }
+    }
+  ],
+  "education": [
+    {
+      "start_date": "2021-09-05",
+      "end_date": "2025-07-10",
+      "area": "Digital Economics (B.Sc.)",
+      "study_type": "Bachelor`s degree",
+      "institution": "East European University of Economics and Management",
+      "logo": "east-european-university.svg",
+      "description" : "Bachelor's program in Digital Economics combines IT and business disciplines. The curriculum includes programming, web development, database design, and data analytics, alongside business process management, project planning, and digital transformation strategy."
+    }
+  ],
+  "languages" : {
+    "Ukrainian (C2)" : "Native",
+    "English (B2/C1)" : "Advanced",
+    "German (A2/B1)" : "Beginner (in progress)"
+  }
+}
+
