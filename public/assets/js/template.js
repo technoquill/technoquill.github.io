@@ -164,7 +164,7 @@ const switchLanguage = () => {
             localStorage.setItem('lang', lang);
             document.documentElement.lang = lang;
 
-            const response = await fetch(`./data/json/${lang}/data.json`);
+            const response = await fetch(`./data/${lang}/data.json`);
             const data = await response.json();
             document.title = data.meta_title;
 
