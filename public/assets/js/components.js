@@ -311,7 +311,7 @@ const EducationSectionComponent = {
                          :src="storage('placeholder')" :alt="item.institution"
                          class="company-logo img-fluid">
                 </div>
-                <div class="col"><!--<span v-html="formatDate(item.start_date, locale)"></span> - --><span
+                <div class="col"><span
                         v-html="formatDate(item.end_date, locale)"></span><br>
                     <strong v-text="item.area"></strong> — <span v-text="item.study_type"></span>
                 </div>
@@ -349,6 +349,7 @@ const QrModalComponent = {
     </div>
   `
 };
+
 
 
 
