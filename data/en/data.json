@@ -167,7 +167,7 @@
     {
       "start_date": "2021-09-05",
       "end_date": "2025-07-10",
-      "area": "Digital Economics (B.Sc.)",
+      "area": "Digital Economics",
       "study_type": "Bachelor`s degree",
       "institution": "East European University of Economics and Management",
       "logo": "east-european-university.svg",
@@ -180,4 +180,5 @@
     "German (A2/B1)" : "Beginner (in progress)"
   }
 }
+
 
